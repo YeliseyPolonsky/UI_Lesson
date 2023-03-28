@@ -6,6 +6,7 @@ public class ChildCube : MonoBehaviour
 {
     private Clickable clickable;
     private Camera _camera;
+    
 
     private void Start()
     {
@@ -13,22 +14,16 @@ public class ChildCube : MonoBehaviour
         _camera = GameObject.FindAnyObjectByType<Camera>();
     }
 
-    public void OnMouseOver()
+    public void LateUpdate()
     {
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             if (hit.collider.TryGetComponent(out ChildCube _clickable))
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    string name = gameObject.name;
-                }
+                clickable.Hit(_clickable.gameObject.transform.position);
+                Destroy(_clickable.gameObject);
             }
         }
-        clickable.Hit(transform.position);
-        clickable.Hit(transform.position);
-        clickable.Hit(transform.position);
-        GameObject.Find(name).SetActive(false);
     }
 }

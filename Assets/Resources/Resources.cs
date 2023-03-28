@@ -13,6 +13,11 @@ public class Resources : MonoBehaviour
     public event Action<int> OnChangeCoins;
     public event Action<Vector3> OnCollectCoins;
 
+    public void AddPoint()
+    {
+        Coins++;
+    }
+
     private void Start()
     {
         OnChangeCoins?.Invoke(Coins);

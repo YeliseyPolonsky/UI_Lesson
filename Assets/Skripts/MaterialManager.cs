@@ -5,10 +5,14 @@ using UnityEngine;
 public class MaterialManager : MonoBehaviour
 {
 
-    public Renderer Renderer;
+    public Renderer RendererCube;
+    public Renderer RendererShere;
+    public Renderer RendererCilinder;
 
     public void SetMaterial(Material material) {
-        Renderer.material = material;
+        RendererCube.material = material;
+        RendererCilinder.material = material;
+        RendererShere.material = material;
     }
 
 }

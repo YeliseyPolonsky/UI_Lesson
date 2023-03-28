@@ -34,8 +34,5 @@ public class ModelVariants : MonoBehaviour
         _currenSelected.SetActive(false);
         _currenSelected = _models[index];
         _currenSelected.SetActive(true);
-        _materialManager.Renderer = _currenSelected.GetComponent<MeshRenderer>();
     }
-
-
 }

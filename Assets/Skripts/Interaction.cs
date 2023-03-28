@@ -15,7 +15,7 @@ public class Interaction : MonoBehaviour
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            if (hit.collider.TryGetComponent(out Clickable clickable))
+            if (hit.collider.GetComponent<Clickable>())
             {
                 if (Input.GetMouseButtonDown(0))
                 {
